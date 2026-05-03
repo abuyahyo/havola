@@ -3,11 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Исмоил Дилмурод ўғли</title>
+    <title>Исмоил Дилмурод ўғли — Шахсий саҳифа</title>
+
+    <meta name="description" content="Исмоил Дилмурод ўғлининг шахсий саҳифаси. Қуръони Карим ўзбекча таржимаси, Имом Бухорий саҳиҳ тўплами, Имом Нававий қирқ ҳадиси, зикр ва дуолар тўплами.">
+    <meta name="author" content="Исмоил Дилмурод ўғли">
+    <meta name="theme-color" content="#0a3d2e">
+    <link rel="canonical" href="https://abuyahyo.github.io/havola/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="uz_UZ">
+    <meta property="og:site_name" content="Исмоил Дилмурод ўғли">
+    <meta property="og:title" content="Исмоил Дилмурод ўғли — Шахсий саҳифа">
+    <meta property="og:description" content="Қуръони Карим, Саҳиҳ Бухорий, Қирқ ҳадис, зикр ва дуолар.">
+    <meta property="og:url" content="https://abuyahyo.github.io/havola/">
+    <meta property="og:image" content="https://abuyahyo.github.io/havola/avatar.jpeg">
+    <meta property="og:image:alt" content="Исмоил Дилмурод ўғли аватари">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Исмоил Дилмурод ўғли — Шахсий саҳифа">
+    <meta name="twitter:description" content="Қуръони Карим, Саҳиҳ Бухорий, Қирқ ҳадис, зикр ва дуолар.">
+    <meta name="twitter:image" content="https://abuyahyo.github.io/havola/avatar.jpeg">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a3d2e'/%3E%3Ctext x='50%25' y='52%25' dominant-baseline='middle' text-anchor='middle' font-family='serif' font-size='40' font-weight='700' fill='%23d4af37'%3E۞%3C/text%3E%3C/svg%3E">
+    <link rel="apple-touch-icon" href="avatar.jpeg">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -31,11 +53,8 @@
         body::before {
             content: '';
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
+            inset: 0;
+            background-image:
                 radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
                 radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
                 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23d4af37' stroke-opacity='0.1' stroke-width='1'%3E%3Cpath d='M40 0 L80 40 L40 80 L0 40 Z'/%3E%3Cpath d='M40 20 L60 40 L40 60 L20 40 Z'/%3E%3Ccircle cx='40' cy='40' r='8'/%3E%3C/g%3E%3C/svg%3E");
@@ -48,10 +67,11 @@
             max-width: 480px;
             background: rgba(10, 40, 25, 0.85);
             backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             border-radius: 25px;
             padding: 40px 30px;
             border: 2px solid #d4af37;
-            box-shadow: 
+            box-shadow:
                 0 0 40px rgba(212, 175, 55, 0.3),
                 inset 0 0 30px rgba(212, 175, 55, 0.05);
             position: relative;
@@ -62,10 +82,7 @@
         .container::before {
             content: '';
             position: absolute;
-            top: 8px;
-            left: 8px;
-            right: 8px;
-            bottom: 8px;
+            inset: 8px;
             border: 1px solid rgba(212, 175, 55, 0.4);
             border-radius: 20px;
             pointer-events: none;
@@ -106,7 +123,7 @@
             font-size: 50px;
             color: #0a3d2e;
             border: 4px solid #d4af37;
-            box-shadow: 
+            box-shadow:
                 0 0 30px rgba(212, 175, 55, 0.6),
                 inset 0 0 20px rgba(255, 255, 255, 0.2);
             overflow: hidden;
@@ -118,6 +135,7 @@
             height: 100%;
             object-fit: cover;
             border-radius: 50%;
+            display: block;
         }
 
         .name {
@@ -186,7 +204,7 @@
             font-size: 16px;
             font-weight: 600;
             font-family: 'Amiri', serif;
-            transition: all 0.3s ease;
+            transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
             position: relative;
             overflow: hidden;
         }
@@ -202,24 +220,34 @@
             transition: left 0.5s ease;
         }
 
-        .link-btn:hover {
+        .link-btn:hover,
+        .link-btn:focus-visible {
             background: linear-gradient(135deg, rgba(212, 175, 55, 0.3), rgba(212, 175, 55, 0.15));
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
             color: #ffffff;
+            outline: none;
         }
 
-        .link-btn:hover::before {
+        .link-btn:focus-visible {
+            box-shadow: 0 0 0 3px rgba(244, 215, 122, 0.6), 0 8px 25px rgba(212, 175, 55, 0.3);
+        }
+
+        .link-btn:hover::before,
+        .link-btn:focus-visible::before {
             left: 100%;
         }
 
-        .link-btn i {
-            font-size: 20px;
+        .link-btn .icon {
+            width: 22px;
+            height: 22px;
             color: #d4af37;
+            flex-shrink: 0;
             transition: transform 0.3s ease;
         }
 
-        .link-btn:hover i {
+        .link-btn:hover .icon,
+        .link-btn:focus-visible .icon {
             transform: scale(1.2) rotate(5deg);
         }
 
@@ -280,62 +308,83 @@
         .container > *:nth-child(3) { animation-delay: 0.3s; }
         .container > *:nth-child(4) { animation-delay: 0.4s; }
         .container > *:nth-child(5) { animation-delay: 0.5s; }
+
+        @media (prefers-reduced-motion: reduce) {
+            .container > *,
+            .link-btn,
+            .link-btn::before,
+            .link-btn .icon {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Бисмиллаҳ -->
-        <div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
-        
-        <div class="ornament">۞ ❈ ۞</div>
+    <main class="container">
+        <div class="bismillah" lang="ar" dir="rtl">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
 
-        <!-- Аватар -->
+        <div class="ornament" aria-hidden="true">۞ ❈ ۞</div>
+
         <div class="avatar-wrapper">
             <div class="avatar">
-                <img src="avatar.jpeg" alt="Масжид ан-Набавий">
+                <img src="avatar.jpeg" alt="Исмоил Дилмурод ўғли — аватар расми" width="130" height="130" fetchpriority="high" decoding="async">
             </div>
         </div>
 
-        <!-- Исм ва таниш сўз -->
         <h1 class="name">Исмоил Дилмурод ўғли</h1>
         <p class="bio">Ассалому алайкум ва раҳматуллоҳ<br>Менинг шахсий саҳифамга хуш келибсиз</p>
 
-        <!-- Асосий ҳаволалар -->
-        <div class="links-section">
-            <div class="section-title">Ҳаволалар</div>
-            
-            <a href="https://abuyahyo.github.io/quron/" class="link-btn">
-                <i class="fas fa-book-quran"></i>
+        <nav class="links-section" aria-label="Асосий ҳаволалар">
+            <h2 class="section-title">Ҳаволалар</h2>
+
+            <a href="https://abuyahyo.github.io/quron/" class="link-btn" rel="noopener">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                    <path d="M12 7v14"/>
+                </svg>
                 <span>Қуръони Карим — Ўзбекча таржима</span>
             </a>
 
-            <a href="https://abuyahyo.github.io/buxoriy/" class="link-btn">
-                <i class="fas fa-book"></i>
+            <a href="https://abuyahyo.github.io/buxoriy/" class="link-btn" rel="noopener">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                </svg>
                 <span>Имом Бухорий — Саҳиҳ тўплами</span>
             </a>
 
-            <a href="https://abuyahyo.github.io/qirq-hadis/" class="link-btn">
-                <i class="fas fa-scroll"></i>
+            <a href="https://abuyahyo.github.io/qirq-hadis/" class="link-btn" rel="noopener">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                    <path d="M19 17V5a2 2 0 0 0-2-2H4"/>
+                    <path d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3"/>
+                </svg>
                 <span>Имом Нававий — Қирқ ҳадис</span>
             </a>
 
-            <a href="https://abuyahyo.github.io/zikr/" class="link-btn">
-                <i class="fas fa-praying-hands"></i>
+            <a href="https://abuyahyo.github.io/zikr/" class="link-btn" rel="noopener">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                    <path d="M12 2.5l1.9 5.7a2 2 0 0 0 1.4 1.4l5.7 1.9-5.7 1.9a2 2 0 0 0-1.4 1.4L12 20.5l-1.9-5.7a2 2 0 0 0-1.4-1.4L3 11.5l5.7-1.9a2 2 0 0 0 1.4-1.4z"/>
+                </svg>
                 <span>Зикр ва дуолар тўплами</span>
             </a>
 
-            <a href="https://abuyahyo.github.io/haqiqat/" class="link-btn">
-                <i class="fas fa-lightbulb"></i>
+            <a href="https://abuyahyo.github.io/haqiqat/" class="link-btn" rel="noopener">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                    <path d="M9 18h6"/>
+                    <path d="M10 22h4"/>
+                    <path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8a6 6 0 0 0-12 0c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/>
+                </svg>
                 <span>Шубҳалар пардаси ортидаги ҳақиқат</span>
             </a>
-        </div>
+        </nav>
 
-        <div class="ornament">۞ ❈ ۞</div>
+        <div class="ornament" aria-hidden="true">۞ ❈ ۞</div>
 
-        <!-- Поясланма -->
-        <div class="footer">
-            <span class="arabic">وَفِّقْنَا اللَّهُ</span>
-        </div>
-    </div>
+        <footer class="footer">
+            <span class="arabic" lang="ar" dir="rtl">وَفِّقْنَا اللَّهُ</span>
+        </footer>
+    </main>
 </body>
 </html>
