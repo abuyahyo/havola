@@ -125,50 +125,6 @@
             letter-spacing: 8px;
         }
 
-        .avatar-wrapper {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-
-        .avatar {
-            width: 150px;
-            height: 185px;
-            border-radius: 50% 50% 8% 8% / 55% 55% 8% 8%;
-            background: linear-gradient(135deg, #d4af37, #b8941f);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 50px;
-            color: #0a3d2e;
-            border: 4px solid #d4af37;
-            box-shadow:
-                0 0 30px rgba(212, 175, 55, 0.6),
-                inset 0 0 20px rgba(255, 255, 255, 0.2);
-            overflow: hidden;
-            position: relative;
-        }
-
-        .avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center top;
-            border-radius: inherit;
-            display: block;
-        }
-
-        /* Аватарга енгил ялтироқлик */
-        .avatar::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(115deg, transparent 35%, rgba(255, 255, 255, 0.18) 50%, transparent 65%);
-            border-radius: inherit;
-            pointer-events: none;
-            animation: avatarShimmer 7s ease-in-out infinite;
-        }
-
         .name {
             text-align: center;
             font-size: 28px;
@@ -312,12 +268,6 @@
                 font-size: 24px;
             }
 
-            .avatar {
-                width: 125px;
-                height: 155px;
-                font-size: 45px;
-            }
-
             .bismillah {
                 font-size: 22px;
             }
@@ -364,12 +314,7 @@
             50% { opacity: 0.85; }
         }
 
-        @keyframes avatarShimmer {
-            0% { transform: translateX(-100%); }
-            55%, 100% { transform: translateX(100%); }
-        }
-
-        .container > * {
+.container > * {
             animation: fadeInUp 0.6s ease backwards;
         }
 
@@ -390,7 +335,6 @@
             .container,
             .container > *,
             .bismillah,
-            .avatar::after,
             body::after,
             .link-btn,
             .link-btn::before,
@@ -406,12 +350,6 @@
         <div class="bismillah" lang="ar" dir="rtl">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
 
         <div class="ornament" aria-hidden="true">۞ ❈ ۞</div>
-
-        <div class="avatar-wrapper">
-            <div class="avatar">
-                <img src="avatar.jpeg" alt="Масжид ан-Набавий — Қуббат ул-Хадра (кўк гумбаз)" width="150" height="185" fetchpriority="high" decoding="async">
-            </div>
-        </div>
 
         <h1 class="name">Исмоил Дилмурод ўғли</h1>
         <p class="bio">Ассалому алайкум ва раҳматуллоҳ<br>Менинг шахсий саҳифамга хуш келибсиз</p>
