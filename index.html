@@ -195,38 +195,12 @@
             font-size: 16px;
             font-weight: 600;
             font-family: 'Amiri', serif;
-            transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .link-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .link-btn:hover,
-        .link-btn:focus-visible {
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.3), rgba(212, 175, 55, 0.15));
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
-            color: #ffffff;
-            outline: none;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .link-btn:focus-visible {
-            box-shadow: 0 0 0 3px rgba(244, 215, 122, 0.6), 0 8px 25px rgba(212, 175, 55, 0.3);
-        }
-
-        .link-btn:hover::before,
-        .link-btn:focus-visible::before {
-            left: 100%;
+            outline: 2px solid #f4d77a;
+            outline-offset: 2px;
         }
 
         .link-btn .icon {
@@ -234,7 +208,6 @@
             height: 22px;
             color: #d4af37;
             flex-shrink: 0;
-            transition: transform 0.3s ease;
         }
 
         .link-btn .icon-img {
@@ -245,11 +218,6 @@
             border: 1.5px solid #d4af37;
             box-shadow: 0 0 10px rgba(212, 175, 55, 0.45);
             background: #fbfaf3;
-        }
-
-        .link-btn:hover .icon,
-        .link-btn:focus-visible .icon {
-            transform: scale(1.2) rotate(5deg);
         }
 
         .footer {
@@ -345,10 +313,7 @@
             .container,
             .container > *,
             .bismillah,
-            body::after,
-            .link-btn,
-            .link-btn::before,
-            .link-btn .icon {
+            body::after {
                 animation: none !important;
                 transition: none !important;
             }
