@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" width="180" height="180">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fbfaf3"/>
+      <stop offset="100%" stop-color="#eef5ee"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#d4af37"/>
+      <stop offset="100%" stop-color="#b8941f"/>
+    </linearGradient>
+  </defs>
+  <rect x="3" y="3" width="174" height="174" rx="18" fill="url(#bg)" stroke="url(#gold)" stroke-width="4"/>
+  <text x="90" y="110"
+        text-anchor="middle"
+        font-family="'Scheherazade New', 'Amiri', serif"
+        font-size="58"
+        font-weight="700"
+        fill="#1b4332">بصائر</text>
+  <rect x="60" y="126" width="60" height="3" rx="1.5" fill="url(#gold)"/>
+</svg>
