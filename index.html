@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uz">
+<html lang="uz" data-lang="uz">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,6 +30,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        // Apply saved language before paint to avoid flicker
+        try {
+            var l = localStorage.getItem('havola-lang');
+            if (l === 'ar') document.documentElement.setAttribute('data-lang', 'ar');
+        } catch (e) {}
+    </script>
     <style>
         * {
             margin: 0;
@@ -127,6 +134,57 @@
 
         .links-section {
             margin-top: 25px;
+        }
+
+        /* Тил алмаштиргич */
+        .lang-switcher {
+            display: flex;
+            gap: 4px;
+            justify-content: center;
+            align-items: center;
+            width: fit-content;
+            margin: 0 auto 18px;
+            padding: 4px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 999px;
+        }
+
+        .lang-btn {
+            padding: 7px 18px;
+            background: transparent;
+            color: #d4af37;
+            border: none;
+            border-radius: 999px;
+            font-family: 'Amiri', 'Scheherazade New', serif;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .lang-btn[aria-pressed="true"] {
+            background: linear-gradient(135deg, #d4af37, #b8941f);
+            color: #0a3d2e;
+        }
+
+        .lang-btn:focus-visible {
+            outline: 2px solid #f4d77a;
+            outline-offset: 2px;
+        }
+
+        /* Тилга қараб ҳаволаларни кўрсатиш/яшириш */
+        :root[data-lang="uz"] .link-btn.lang-ar,
+        :root[data-lang="ar"] .link-btn.lang-uz {
+            display: none;
+        }
+
+        /* Арабча матнни ўнгдан-чапга */
+        .link-btn.lang-ar span {
+            font-family: 'Scheherazade New', 'Amiri', serif;
+            font-size: 19px;
+            direction: rtl;
         }
 
         .link-btn {
@@ -272,38 +330,43 @@
 
         <div class="ornament" aria-hidden="true">۞ ❈ ۞</div>
 
+        <div class="lang-switcher" role="group" aria-label="Тилни танлаш">
+            <button type="button" class="lang-btn" data-lang="uz">Ўзбекча</button>
+            <button type="button" class="lang-btn" data-lang="ar" lang="ar">العربية</button>
+        </div>
+
         <nav class="links-section" aria-label="Асосий ҳаволалар">
-            <a href="https://abuyahyo.github.io/alloh/" class="link-btn" rel="noopener">
+            <a href="https://abuyahyo.github.io/alloh/" class="link-btn lang-uz" rel="noopener">
                 <img class="icon icon-img" src="alloh.png" alt="" width="52" height="52" loading="lazy" decoding="async">
                 <span>Аллоҳнинг гўзал исмлари</span>
             </a>
 
-            <a href="https://abuyahyo.github.io/quron/" class="link-btn" rel="noopener">
+            <a href="https://abuyahyo.github.io/quron/" class="link-btn lang-uz" rel="noopener">
                 <img class="icon icon-img" src="quron.png" alt="" width="52" height="52" loading="lazy" decoding="async">
                 <span>Қуръони Карим — Ўзбекча таржима</span>
             </a>
 
-            <a href="https://abuyahyo.github.io/buxoriy/" class="link-btn" rel="noopener">
+            <a href="https://abuyahyo.github.io/buxoriy/" class="link-btn lang-uz" rel="noopener">
                 <img class="icon icon-img" src="buxoriy.png" alt="" width="52" height="52" loading="lazy" decoding="async">
                 <span>Имом Бухорий — Саҳиҳ тўплами</span>
             </a>
 
-            <a href="https://abuyahyo.github.io/qirq-hadis/" class="link-btn" rel="noopener">
+            <a href="https://abuyahyo.github.io/qirq-hadis/" class="link-btn lang-uz" rel="noopener">
                 <img class="icon icon-img" src="qirq-hadis.png" alt="" width="52" height="52" loading="lazy" decoding="async">
                 <span>Имом Нававий — Қирқ ҳадис</span>
             </a>
 
-            <a href="https://abuyahyo.github.io/zikr/" class="link-btn" rel="noopener">
+            <a href="https://abuyahyo.github.io/zikr/" class="link-btn lang-uz" rel="noopener">
                 <img class="icon icon-img" src="zikr.png" alt="" width="52" height="52" loading="lazy" decoding="async">
                 <span>Зикр ва дуолар тўплами</span>
             </a>
 
-            <a href="https://abuyahyo.github.io/haqiqat/" class="link-btn" rel="noopener">
+            <a href="https://abuyahyo.github.io/haqiqat/" class="link-btn lang-uz" rel="noopener">
                 <img class="icon icon-img" src="haqiqat.png" alt="" width="52" height="52" loading="lazy" decoding="async">
                 <span>Шубҳалар пардаси ортидаги ҳақиқат</span>
             </a>
 
-            <a href="https://abuyahyo.github.io/otamga/" class="link-btn" rel="noopener">
+            <a href="https://abuyahyo.github.io/otamga/" class="link-btn lang-uz" rel="noopener">
                 <img class="icon icon-img" src="otamga.png" alt="" width="52" height="52" loading="lazy" decoding="async">
                 <span>Отамга – Қуръон тиловати учун ёрдамчи</span>
             </a>
@@ -315,5 +378,28 @@
             <span class="arabic" lang="ar" dir="rtl">وَفِّقْنَا اللَّهُ</span>
         </footer>
     </main>
+    <script>
+        (function () {
+            var KEY = 'havola-lang';
+            var root = document.documentElement;
+            var buttons = document.querySelectorAll('.lang-btn');
+
+            function apply(lang) {
+                root.setAttribute('data-lang', lang);
+                buttons.forEach(function (b) {
+                    b.setAttribute('aria-pressed', b.dataset.lang === lang ? 'true' : 'false');
+                });
+                try { localStorage.setItem(KEY, lang); } catch (e) {}
+            }
+
+            var saved;
+            try { saved = localStorage.getItem(KEY); } catch (e) {}
+            apply(saved === 'ar' ? 'ar' : 'uz');
+
+            buttons.forEach(function (b) {
+                b.addEventListener('click', function () { apply(b.dataset.lang); });
+            });
+        })();
+    </script>
 </body>
 </html>
