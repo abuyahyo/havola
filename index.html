@@ -174,10 +174,17 @@
             outline-offset: 2px;
         }
 
-        /* Тилга қараб ҳаволаларни кўрсатиш/яшириш */
-        :root[data-lang="uz"] .link-btn.lang-ar,
-        :root[data-lang="ar"] .link-btn.lang-uz {
+        /* Тилга қараб контентни кўрсатиш/яшириш */
+        :root[data-lang="uz"] .lang-ar,
+        :root[data-lang="ar"] .lang-uz {
             display: none;
+        }
+
+        /* Ўзбекча бисмиллаҳга алоҳида матн услуби */
+        .bismillah.lang-uz {
+            font-family: 'Amiri', 'Times New Roman', serif;
+            font-size: 19px;
+            font-style: italic;
         }
 
         /* Арабча матнни ўнгдан-чапга */
@@ -326,7 +333,8 @@
 </head>
 <body>
     <main class="container">
-        <div class="bismillah" lang="ar" dir="rtl">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+        <div class="bismillah lang-uz">Меҳрибон ва раҳмли Аллоҳнинг исми билан</div>
+        <div class="bismillah lang-ar" lang="ar" dir="rtl">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
 
         <div class="ornament" aria-hidden="true">۞ ❈ ۞</div>
 
