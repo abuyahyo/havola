@@ -10,11 +10,10 @@
     </linearGradient>
   </defs>
   <rect x="3" y="3" width="174" height="174" rx="18" fill="url(#bg)" stroke="url(#gold)" stroke-width="4"/>
-  <text x="90" y="108"
+  <text x="90" y="105"
         text-anchor="middle"
         font-family="Georgia, 'Times New Roman', serif"
-        font-style="italic"
-        font-size="54"
+        font-size="44"
         font-weight="700"
         fill="#1b4332">Аллоҳ</text>
 </svg>
