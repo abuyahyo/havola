@@ -2,12 +2,15 @@
 <html lang="uz" data-lang="uz">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Исмоил Дилмурод ўғли — Шахсий саҳифа</title>
 
     <meta name="description" content="Исмоил Дилмурод ўғлининг шахсий саҳифаси. Қуръони Карим ўзбекча таржимаси, Имом Бухорий саҳиҳ тўплами, Имом Нававий қирқ ҳадиси, зикр ва дуолар тўплами.">
     <meta name="author" content="Исмоил Дилмурод ўғли">
     <meta name="theme-color" content="#0a3d2e">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="canonical" href="https://abuyahyo.github.io/havola/">
 
     <meta property="og:type" content="website">
@@ -51,7 +54,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 30px 15px;
+            padding:
+                max(30px, calc(env(safe-area-inset-top, 0px) + 20px))
+                max(15px, env(safe-area-inset-right, 0px))
+                max(30px, calc(env(safe-area-inset-bottom, 0px) + 20px))
+                max(15px, env(safe-area-inset-left, 0px));
             position: relative;
             overflow-x: hidden;
         }
