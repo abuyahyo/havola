@@ -37,7 +37,7 @@
         // Apply saved language before paint to avoid flicker
         try {
             var l = localStorage.getItem('havola-lang');
-            if (l === 'ar') document.documentElement.setAttribute('data-lang', 'ar');
+            if (l === 'ar' || l === 'windows') document.documentElement.setAttribute('data-lang', l);
         } catch (e) {}
     </script>
     <style>
@@ -181,10 +181,19 @@
             outline-offset: 2px;
         }
 
-        /* Тилга қараб контентни кўрсатиш/яшириш */
-        :root[data-lang="uz"] .lang-ar,
-        :root[data-lang="ar"] .lang-uz {
+        /* Тилга/бўлимга қараб контентни кўрсатиш/яшириш */
+        :root[data-lang="uz"] :is(.lang-ar, .lang-windows),
+        :root[data-lang="ar"] :is(.lang-uz, .lang-windows),
+        :root[data-lang="windows"] :is(.lang-uz, .lang-ar) {
             display: none;
+        }
+
+        .windows-empty {
+            color: rgba(244, 215, 122, 0.7);
+            text-align: center;
+            font-size: 14px;
+            padding: 24px 0;
+            font-style: italic;
         }
 
         /* Ўзбекча бисмиллаҳга алоҳида матн услуби */
@@ -354,6 +363,7 @@
         <div class="lang-switcher" role="group" aria-label="Тилни танлаш">
             <button type="button" class="lang-btn" data-lang="uz">Ўзбекча</button>
             <button type="button" class="lang-btn" data-lang="ar" lang="ar">العربية</button>
+            <button type="button" class="lang-btn" data-lang="windows" lang="en">Windows</button>
         </div>
 
         <nav class="links-section" aria-label="Асосий ҳаволалар">
@@ -406,6 +416,8 @@
                 <img class="icon icon-img" src="basoir.png" alt="" width="52" height="52" loading="lazy" decoding="async">
                 <span>بصائر — أكبر مشروع فكري في نقد الإلحاد وبيان بعض أدلة صحة الإسلام</span>
             </a>
+
+            <p class="lang-windows windows-empty">Тез орада ҳаволалар қўшилади...</p>
         </nav>
 
         <div class="ornament" aria-hidden="true">۞ ❈ ۞</div>
@@ -429,9 +441,10 @@
                 try { localStorage.setItem(KEY, lang); } catch (e) {}
             }
 
+            var allowed = ['uz', 'ar', 'windows'];
             var saved;
             try { saved = localStorage.getItem(KEY); } catch (e) {}
-            apply(saved === 'ar' ? 'ar' : 'uz');
+            apply(allowed.indexOf(saved) >= 0 ? saved : 'uz');
 
             buttons.forEach(function (b) {
                 b.addEventListener('click', function () { apply(b.dataset.lang); });
