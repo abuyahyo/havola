@@ -20,8 +20,8 @@ site (`index.html`) deployed via GitHub Pages.
 
 - **Palette**: green gradient bg (#0a3d2e → #1a5d3a → #0a3d2e), gold accents
   (#d4af37, #f4d77a, #b8941f), cream icon bg (#fbfaf3)
-- **Fonts**: Amiri (Cyrillic + base) and Scheherazade New (Arabic), loaded
-  from Google Fonts with `display=swap`
+- **Fonts**: Nunito (Cyrillic + Latin base, sans-serif) and Scheherazade New
+  (Arabic), loaded from Google Fonts with `display=swap`
 - **Decorations**: bismillah at top, ornaments `۞ ❈ ۞`, footer dua
 - **Animations**: container border pulse, bismillah glow, twinkling stars
   layer, `fadeInUp` entrance. All gated by `@media (prefers-reduced-motion)`.
