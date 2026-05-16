@@ -41,16 +41,21 @@ site (`index.html`) deployed via GitHub Pages.
 - Icons that bake a gold border into the PNG visually appear thicker than
   ones that don't (double border). Aim for baked-in border for visual parity.
 
-## Language toggle (uz / ar)
+## Section toggle (uz / ar / windows)
 
 - `<html lang="uz" data-lang="uz">` is the default
 - Pill switcher `.lang-switcher` with `<button class="lang-btn" data-lang="…">`
-- Visibility rule: any element classed `lang-uz` is hidden when `data-lang=ar`
-  and vice versa. The toggle buttons use `lang-btn` (not `lang-uz`/`lang-ar`)
-  so they always show
+- Three modes today: `uz`, `ar`, `windows`. (Despite the `lang-` prefix,
+  Windows is a content section, not a language.)
+- Visibility rule: any element classed `lang-X` is hidden when
+  `data-lang ≠ X`. So in `windows` mode every `.lang-uz` and `.lang-ar`
+  is hidden — including the bismillah and footer dua — and the page
+  shows only the `.lang-windows`-tagged content. The toggle buttons use
+  `lang-btn` (not `lang-uz`/`lang-ar`/`lang-windows`) so they always show.
 - AR link buttons need `lang="ar" dir="rtl"` on the `<a>` so the icon flips
   to the right edge and the text flows RTL
-- Selected language persists in `localStorage['havola-lang']`. A tiny
+- Selected mode persists in `localStorage['havola-lang']`. The allowlist
+  is `['uz', 'ar', 'windows']` — anything else falls back to `uz`. A tiny
   head-level script applies the saved value before paint to avoid FOUC
 
 ## Link button pattern
