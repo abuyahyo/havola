@@ -277,6 +277,61 @@
             }
         }
 
+        /* ПК браузер учун мослаштириш */
+        @media (min-width: 768px) {
+            body {
+                padding: 40px 30px;
+            }
+
+            .container {
+                max-width: 480px;
+                padding: 50px 45px;
+            }
+
+            :root[data-lang="uz"] .container,
+            :root[data-lang="ar"] .container {
+                max-width: 780px;
+            }
+
+            .bismillah {
+                font-size: 32px;
+            }
+
+            .bismillah.lang-uz {
+                font-size: 22px;
+            }
+
+            .ornament {
+                font-size: 22px;
+                margin: 18px 0;
+            }
+
+            :root[data-lang="uz"] .links-section,
+            :root[data-lang="ar"] .links-section {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 12px;
+            }
+
+            :root[data-lang="uz"] .link-btn,
+            :root[data-lang="ar"] .link-btn {
+                margin-bottom: 0;
+            }
+
+            .footer {
+                font-size: 14px;
+                margin-top: 35px;
+            }
+
+            .footer .arabic {
+                font-size: 20px;
+            }
+
+            .footer .lang-uz {
+                font-size: 16px;
+            }
+        }
+
         /* Анимациялар */
         @keyframes fadeInUp {
             from {
