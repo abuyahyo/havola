@@ -18,21 +18,19 @@ site (`index.html`) deployed via GitHub Pages.
 
 ## Design
 
-- **Theme**: night sky / hilol. Deep midnight-blue background with violet
-  and teal nebula tints, a gold crescent + 5-pointed star emblem at the
-  top, a multi-layer star field, and an occasional shooting star.
+- **Theme**: night sky. Deep midnight-blue background with violet and teal
+  nebula tints, a multi-layer star field, and an occasional shooting star.
 - **Palette**: midnight gradient bg (#020617 → #0c1839 → #1e1b4b), gold
   accents (#d4af37, #f4d77a), cream text (#fef3c7), cream icon bg
   (#fbfaf3). `theme-color` meta is `#0c1839`.
 - **Fonts**: Nunito (Cyrillic + Latin base, sans-serif) and Scheherazade New
   (Arabic), loaded from Google Fonts with `display=swap`
-- **Decorations**: gold crescent SVG (mask-cut moon + small 5-pointed star,
-  top), bismillah, ornament rows (`✦ ✧ ✦` flanked by hairline gradient
-  rules), small corner star inside the container.
-- **Animations**: moon glow pulse, bismillah text-shadow glow, twinkling
-  stars layer, looping shooting star, `fadeInUp` entrance staggered across
-  container children. All gated by `@media (prefers-reduced-motion)`.
-  **No hover/tap animations on link buttons** — intentionally removed.
+- **Decorations**: bismillah at top, ornament rows (`✦ ✧ ✦` flanked by
+  hairline gradient rules), small corner star inside the container.
+- **Animations**: bismillah text-shadow glow, twinkling stars layer,
+  looping shooting star, `fadeInUp` entrance staggered across container
+  children. All gated by `@media (prefers-reduced-motion)`. **No hover/tap
+  animations on link buttons** — intentionally removed.
 
 ## Icon conventions
 
