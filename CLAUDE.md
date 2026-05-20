@@ -21,8 +21,8 @@ site (`index.html`) deployed via GitHub Pages.
 - **Theme**: night sky. Deep midnight-blue background with violet and teal
   nebula tints, a multi-layer star field, and an occasional shooting star.
 - **Palette**: midnight gradient bg (#020617 → #0c1839 → #1e1b4b), gold
-  accents (#d4af37, #f4d77a), cream text (#fef3c7), cream icon bg
-  (#fbfaf3). `theme-color` meta is `#0c1839`.
+  accents (#d4af37, #f4d77a), cream text (#fef3c7), violet icon bg
+  (#1e1b4b). `theme-color` meta is `#0c1839`.
 - **Fonts**: Nunito (Cyrillic + Latin base, sans-serif) and Scheherazade New
   (Arabic), loaded from Google Fonts with `display=swap`
 - **Decorations**: bismillah at top, ornament rows (`✦ ✧ ✦` flanked by
@@ -42,7 +42,7 @@ site (`index.html`) deployed via GitHub Pages.
   ```
   (Two-step move because the FS may be case-insensitive.)
 - Display size **52×52** via `.icon-img` (rounded square, gold border,
-  cream bg)
+  violet bg #1e1b4b)
 - Icons that bake a gold border into the PNG visually appear thicker than
   ones that don't (double border). Aim for baked-in border for visual parity.
 
