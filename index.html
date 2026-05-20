@@ -279,7 +279,7 @@
             margin-top: 20px;
         }
 
-        /* Самовий карточкалар */
+        /* Liquid glass карточкалар */
         .link-btn {
             display: flex;
             align-items: center;
@@ -288,21 +288,45 @@
             width: 100%;
             padding: 14px 18px;
             margin-bottom: 12px;
-            background: linear-gradient(135deg, rgba(30, 27, 75, 0.55) 0%, rgba(15, 23, 42, 0.5) 100%);
-            border: 1px solid rgba(212, 175, 55, 0.4);
-            border-radius: 16px;
+            background:
+                linear-gradient(135deg,
+                    rgba(255, 255, 255, 0.12) 0%,
+                    rgba(255, 255, 255, 0.04) 50%,
+                    rgba(244, 215, 122, 0.06) 100%);
+            border: 1px solid rgba(244, 215, 122, 0.28);
+            border-radius: 18px;
             color: var(--cream);
             text-decoration: none;
             font-size: 15.5px;
             font-weight: 600;
             font-family: 'Nunito', 'Scheherazade New', sans-serif;
-            backdrop-filter: blur(6px);
-            -webkit-backdrop-filter: blur(6px);
+            backdrop-filter: blur(18px) saturate(180%);
+            -webkit-backdrop-filter: blur(18px) saturate(180%);
             box-shadow:
-                inset 0 1px 0 rgba(255, 255, 255, 0.05),
-                0 4px 18px rgba(2, 6, 23, 0.4);
+                inset 0 1px 0 rgba(255, 255, 255, 0.32),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.22),
+                0 8px 24px rgba(2, 6, 23, 0.45),
+                0 2px 6px rgba(2, 6, 23, 0.25);
             -webkit-tap-highlight-color: transparent;
             position: relative;
+        }
+
+        /* Шиша устидаги нурланиш */
+        .link-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            background: linear-gradient(180deg,
+                rgba(255, 255, 255, 0.18) 0%,
+                rgba(255, 255, 255, 0.04) 40%,
+                rgba(255, 255, 255, 0) 65%);
+            pointer-events: none;
+        }
+
+        .link-btn > * {
+            position: relative;
+            z-index: 1;
         }
 
         .link-btn:focus-visible {
