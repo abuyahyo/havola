@@ -7,7 +7,7 @@
 
     <meta name="description" content="Исмоил Дилмурод ўғлининг шахсий саҳифаси. Қуръони Карим ўзбекча таржимаси, Имом Бухорий саҳиҳ тўплами, Имом Нававий қирқ ҳадиси, зикр ва дуолар тўплами.">
     <meta name="author" content="Исмоил Дилмурод ўғли">
-    <meta name="theme-color" content="#0c1839">
+    <meta name="theme-color" content="#0a1024">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -32,472 +32,353 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Nunito:wght@400;500;600;700&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+
     <script>
-        // Apply saved language before paint to avoid flicker
         try {
             var l = localStorage.getItem('havola-lang');
             if (l === 'ar' || l === 'windows') document.documentElement.setAttribute('data-lang', l);
         } catch (e) {}
     </script>
+
     <style>
         :root {
-            --bg-deep: #020617;
-            --bg-mid: #0c1839;
-            --bg-glow: #1e1b4b;
-            --gold: #d4af37;
-            --gold-bright: #f4d77a;
-            --cream: #fef3c7;
+            --bg: #050816;
+            --bg-grad-top: #0a1024;
+            --ink: #ece4cc;
+            --ink-soft: #b8b09a;
+            --ink-muted: #837d6a;
+            --gold: #caa647;
+            --gold-bright: #e9c97a;
+            --hairline: rgba(202, 166, 71, 0.18);
+            --hairline-soft: rgba(202, 166, 71, 0.1);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html, body { min-height: 100%; }
 
         body {
-            font-family: 'Nunito', 'Scheherazade New', system-ui, sans-serif;
-            min-height: 100vh;
-            color: var(--cream);
+            font-family: 'Nunito', system-ui, sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.5;
+            color: var(--ink);
             background:
-                radial-gradient(ellipse 70% 50% at 15% -5%, rgba(49, 46, 129, 0.45) 0%, transparent 60%),
-                radial-gradient(ellipse 65% 45% at 90% 105%, rgba(30, 58, 138, 0.35) 0%, transparent 60%),
-                radial-gradient(ellipse at 50% 50%, #1e1b4b 0%, #0c1839 45%, #020617 100%);
+                radial-gradient(ellipse 90% 60% at 50% -5%, rgba(28, 38, 78, 0.55) 0%, transparent 60%),
+                linear-gradient(180deg, var(--bg-grad-top) 0%, var(--bg) 100%);
             background-attachment: fixed;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
             padding:
-                max(30px, calc(env(safe-area-inset-top, 0px) + 20px))
-                max(15px, env(safe-area-inset-right, 0px))
-                max(30px, calc(env(safe-area-inset-bottom, 0px) + 20px))
-                max(15px, env(safe-area-inset-left, 0px));
+                env(safe-area-inset-top, 0px)
+                env(safe-area-inset-right, 0px)
+                env(safe-area-inset-bottom, 0px)
+                env(safe-area-inset-left, 0px);
             position: relative;
             overflow-x: hidden;
         }
 
-        /* Юлдузли осмон — статик қатлам */
+        /* Жуда нозик юлдузли осмон */
         body::before {
             content: '';
             position: fixed;
             inset: 0;
             background-image:
-                radial-gradient(0.5px 0.5px at 5% 8%, rgba(255,255,255,0.95), transparent 60%),
-                radial-gradient(0.8px 0.8px at 12% 25%, rgba(244,215,122,0.85), transparent 60%),
-                radial-gradient(1px 1px at 22% 55%, rgba(255,255,255,0.9), transparent 60%),
-                radial-gradient(0.5px 0.5px at 38% 12%, rgba(255,255,255,0.85), transparent 60%),
-                radial-gradient(1.3px 1.3px at 48% 38%, rgba(244,215,122,0.9), transparent 60%),
-                radial-gradient(0.7px 0.7px at 55% 78%, rgba(255,255,255,0.85), transparent 60%),
-                radial-gradient(0.5px 0.5px at 62% 5%, rgba(255,255,255,0.85), transparent 60%),
-                radial-gradient(1px 1px at 70% 45%, rgba(244,215,122,0.85), transparent 60%),
-                radial-gradient(0.6px 0.6px at 78% 22%, rgba(255,255,255,0.85), transparent 60%),
-                radial-gradient(1.4px 1.4px at 85% 70%, rgba(255,255,255,0.9), transparent 60%),
-                radial-gradient(0.7px 0.7px at 92% 35%, rgba(244,215,122,0.8), transparent 60%),
-                radial-gradient(0.5px 0.5px at 95% 88%, rgba(255,255,255,0.85), transparent 60%),
-                radial-gradient(1px 1px at 8% 92%, rgba(244,215,122,0.7), transparent 60%),
-                radial-gradient(0.6px 0.6px at 33% 95%, rgba(255,255,255,0.85), transparent 60%),
-                radial-gradient(0.8px 0.8px at 60% 18%, rgba(255,255,255,0.85), transparent 60%),
-                radial-gradient(1.5px 1.5px at 18% 70%, rgba(244,215,122,0.85), transparent 60%);
+                radial-gradient(0.5px 0.5px at 12% 18%, rgba(255,255,255,0.55), transparent 60%),
+                radial-gradient(0.8px 0.8px at 38% 42%, rgba(244,215,122,0.4), transparent 60%),
+                radial-gradient(0.5px 0.5px at 62% 24%, rgba(255,255,255,0.5), transparent 60%),
+                radial-gradient(0.7px 0.7px at 78% 68%, rgba(255,255,255,0.45), transparent 60%),
+                radial-gradient(0.9px 0.9px at 88% 14%, rgba(244,215,122,0.45), transparent 60%),
+                radial-gradient(0.5px 0.5px at 22% 78%, rgba(255,255,255,0.45), transparent 60%),
+                radial-gradient(0.6px 0.6px at 52% 88%, rgba(255,255,255,0.4), transparent 60%),
+                radial-gradient(0.5px 0.5px at 8% 55%, rgba(244,215,122,0.35), transparent 60%),
+                radial-gradient(0.6px 0.6px at 92% 48%, rgba(255,255,255,0.4), transparent 60%);
             z-index: 0;
             pointer-events: none;
         }
 
-        /* Юлдузларнинг шилт-шилт қилувчи қатлами */
-        body::after {
-            content: '';
-            position: fixed;
-            inset: 0;
-            background-image:
-                radial-gradient(1.5px 1.5px at 15% 20%, rgba(255,255,255,0.95), transparent 60%),
-                radial-gradient(2px 2px at 45% 65%, rgba(244,215,122,0.9), transparent 60%),
-                radial-gradient(1.2px 1.2px at 75% 30%, rgba(255,255,255,0.9), transparent 60%),
-                radial-gradient(1.8px 1.8px at 90% 80%, rgba(244,215,122,0.85), transparent 60%),
-                radial-gradient(1.5px 1.5px at 28% 88%, rgba(255,255,255,0.9), transparent 60%),
-                radial-gradient(1px 1px at 60% 12%, rgba(244,215,122,0.8), transparent 60%);
-            z-index: 0;
-            pointer-events: none;
-            animation: starsTwinkle 5s ease-in-out infinite;
-        }
-
-        /* Учар юлдуз */
-        .shooting-star {
-            position: fixed;
-            top: 12%;
-            left: -120px;
-            width: 90px;
-            height: 1.5px;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.95) 60%, rgba(244,215,122,0.9));
-            border-radius: 999px;
-            box-shadow: 0 0 8px rgba(244,215,122,0.7);
-            opacity: 0;
-            z-index: 0;
-            pointer-events: none;
-            transform: rotate(28deg);
-            animation: shootingStar 14s ease-in infinite;
-            animation-delay: 5s;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 480px;
-            background:
-                radial-gradient(ellipse 80% 50% at 50% 0%,
-                    rgba(255, 255, 255, 0.18) 0%,
-                    rgba(255, 255, 255, 0.04) 35%,
-                    rgba(255, 255, 255, 0) 70%),
-                linear-gradient(180deg, rgba(30, 27, 75, 0.35) 0%, rgba(12, 24, 57, 0.55) 100%);
-            backdrop-filter: blur(28px) saturate(180%);
-            -webkit-backdrop-filter: blur(28px) saturate(180%);
-            border-radius: 28px;
-            padding: 40px 30px 38px;
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            box-shadow:
-                inset 0 1.5px 0 rgba(255, 255, 255, 0.45),
-                inset 0 -1px 0 rgba(0, 0, 0, 0.28),
-                inset 1px 0 0 rgba(255, 255, 255, 0.08),
-                inset -1px 0 0 rgba(255, 255, 255, 0.08),
-                0 1px 0 rgba(244, 215, 122, 0.25),
-                0 0 60px rgba(88, 28, 135, 0.35),
-                0 16px 50px rgba(2, 6, 23, 0.55);
+        .page {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 96px 28px 80px;
             position: relative;
             z-index: 1;
         }
 
-        /* Ички нозик чизиқ */
-        .container::before {
-            content: '';
-            position: absolute;
-            inset: 8px;
-            border: 1px solid rgba(244, 215, 122, 0.12);
-            border-radius: 22px;
-            pointer-events: none;
-        }
-
-        /* Бурчакдаги юлдузчалар */
-        .container::after {
-            content: '✦';
-            position: absolute;
-            top: 14px;
-            right: 18px;
-            color: var(--gold-bright);
-            font-size: 12px;
-            opacity: 0.65;
-            text-shadow: 0 0 6px rgba(244, 215, 122, 0.6);
-            pointer-events: none;
+        /* Masthead */
+        .masthead {
+            text-align: center;
+            margin-bottom: 80px;
         }
 
         .bismillah {
-            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: 23px;
+            line-height: 1.35;
+            color: var(--ink);
+            letter-spacing: 0.005em;
+        }
+
+        .bismillah.lang-ar {
             font-family: 'Scheherazade New', serif;
-            font-size: 28px;
-            color: var(--gold-bright);
-            margin-bottom: 8px;
+            font-style: normal;
             font-weight: 700;
-            text-shadow: 0 0 12px rgba(244, 215, 122, 0.5);
-            letter-spacing: 0.5px;
-        }
-
-        .bismillah.lang-uz {
-            font-family: 'Nunito', sans-serif;
-            font-size: 17px;
-            font-weight: 600;
-            letter-spacing: 0.3px;
-            color: var(--cream);
-            text-shadow: 0 0 10px rgba(244, 215, 122, 0.25);
-            opacity: 0.95;
-        }
-
-        .ornament {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            color: var(--gold);
-            margin: 18px 0;
-            opacity: 0.85;
-        }
-
-        .ornament .line {
-            display: inline-block;
-            width: 56px;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--gold), transparent);
-        }
-
-        .ornament .star {
-            font-size: 13px;
-            filter: drop-shadow(0 0 6px rgba(244, 215, 122, 0.55));
-        }
-
-        .ornament .star.mid {
-            font-size: 17px;
+            font-size: 32px;
             color: var(--gold-bright);
+            letter-spacing: 0;
         }
 
-        /* Тил алмаштиргич */
+        .rule {
+            width: 44px;
+            height: 1px;
+            background: var(--gold);
+            margin: 32px auto 28px;
+            opacity: 0.75;
+        }
+
+        .name {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+            font-size: 32px;
+            line-height: 1.15;
+            color: var(--ink);
+            letter-spacing: 0.005em;
+        }
+
+        .role {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 500;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.28em;
+            color: var(--ink-muted);
+            margin-top: 14px;
+        }
+
+        /* Lang switcher: text-only */
         .lang-switcher {
             display: flex;
-            gap: 4px;
             justify-content: center;
             align-items: center;
-            width: fit-content;
-            margin: 0 auto 20px;
-            padding: 4px;
-            background:
-                linear-gradient(180deg,
-                    rgba(255, 255, 255, 0.18) 0%,
-                    rgba(255, 255, 255, 0.05) 100%);
-            border: 1px solid rgba(255, 255, 255, 0.22);
-            border-radius: 999px;
-            backdrop-filter: blur(20px) saturate(180%);
-            -webkit-backdrop-filter: blur(20px) saturate(180%);
-            box-shadow:
-                inset 0 1.5px 0 rgba(255, 255, 255, 0.5),
-                inset 0 -1px 0 rgba(0, 0, 0, 0.22),
-                0 6px 18px rgba(2, 6, 23, 0.4);
+            gap: 16px;
+            margin-bottom: 64px;
         }
 
         .lang-btn {
-            padding: 7px 18px;
-            background: transparent;
-            color: var(--gold-bright);
+            background: none;
             border: none;
-            border-radius: 999px;
-            font-family: 'Nunito', 'Scheherazade New', sans-serif;
-            font-size: 14px;
-            font-weight: 700;
+            padding: 4px 0;
+            font-family: 'Nunito', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--ink-muted);
             cursor: pointer;
             -webkit-tap-highlight-color: transparent;
-            transition: background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+            transition: color 0.2s ease, border-color 0.2s ease;
+            border-bottom: 1px solid transparent;
+            line-height: 1;
         }
 
-        .lang-btn[aria-pressed="true"] {
-            background: linear-gradient(135deg, var(--gold-bright), var(--gold));
-            color: #0c1839;
-            box-shadow: 0 0 16px rgba(244, 215, 122, 0.5);
+        .lang-btn[lang="ar"] {
+            font-family: 'Scheherazade New', 'Nunito', serif;
+            font-size: 17px;
+            letter-spacing: 0;
+            text-transform: none;
+            line-height: 1;
         }
 
         .lang-btn:focus-visible {
             outline: 2px solid var(--gold-bright);
-            outline-offset: 2px;
+            outline-offset: 4px;
         }
 
-        /* Тилга/бўлимга қараб контентни кўрсатиш/яшириш */
+        .lang-btn[aria-pressed="true"] {
+            color: var(--gold-bright);
+            border-bottom-color: var(--gold);
+        }
+
+        .sep {
+            color: var(--ink-muted);
+            opacity: 0.45;
+            font-size: 12px;
+            user-select: none;
+        }
+
+        /* Бўлим алмаштириш — кўриниш / яшириш */
         :root[data-lang="uz"] :is(.lang-ar, .lang-windows),
         :root[data-lang="ar"] :is(.lang-uz, .lang-windows),
         :root[data-lang="windows"] :is(.lang-uz, .lang-ar) {
             display: none;
         }
 
-        .links-section {
-            margin-top: 20px;
+        /* Entries — hairline list */
+        .entries {
+            display: block;
         }
 
-        /* Liquid glass карточкалар */
-        .link-btn {
+        .entry {
             display: flex;
             align-items: center;
-            justify-content: flex-start;
-            gap: 14px;
-            width: 100%;
-            padding: 14px 18px;
-            margin-bottom: 12px;
-            background:
-                linear-gradient(180deg,
-                    rgba(255, 255, 255, 0.14) 0%,
-                    rgba(255, 255, 255, 0.06) 50%,
-                    rgba(255, 255, 255, 0.02) 100%);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 18px;
-            color: var(--cream);
+            justify-content: space-between;
+            gap: 20px;
+            padding: 26px 4px;
+            border-top: 1px solid var(--hairline);
+            color: var(--ink);
             text-decoration: none;
-            font-size: 15.5px;
-            font-weight: 600;
-            font-family: 'Nunito', 'Scheherazade New', sans-serif;
-            backdrop-filter: blur(22px) saturate(200%);
-            -webkit-backdrop-filter: blur(22px) saturate(200%);
-            box-shadow:
-                inset 0 1.5px 0 rgba(255, 255, 255, 0.5),
-                inset 0 -1px 0 rgba(0, 0, 0, 0.28),
-                inset 1px 0 0 rgba(255, 255, 255, 0.08),
-                inset -1px 0 0 rgba(255, 255, 255, 0.08),
-                0 1px 0 rgba(244, 215, 122, 0.22),
-                0 10px 28px rgba(2, 6, 23, 0.5),
-                0 2px 8px rgba(2, 6, 23, 0.3);
             -webkit-tap-highlight-color: transparent;
             position: relative;
         }
 
-        /* Шиша устидаги нурланиш */
-        .link-btn::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: inherit;
-            background:
-                radial-gradient(ellipse 90% 60% at 50% 0%,
-                    rgba(255, 255, 255, 0.28) 0%,
-                    rgba(255, 255, 255, 0.05) 40%,
-                    rgba(255, 255, 255, 0) 70%);
-            pointer-events: none;
+        .entries > .entry:last-of-type {
+            border-bottom: 1px solid var(--hairline);
         }
 
-        .link-btn > * {
-            position: relative;
-            z-index: 1;
+        .entry-body {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            min-width: 0;
         }
 
-        .link-btn:focus-visible {
-            outline: 2px solid var(--gold-bright);
-            outline-offset: 2px;
+        .entry-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 1.2;
+            color: var(--ink);
+            letter-spacing: 0.005em;
         }
 
-        .link-btn .icon-img {
-            width: 52px;
-            height: 52px;
-            border-radius: 11px;
-            object-fit: cover;
-            border: 1.5px solid var(--gold);
-            box-shadow: 0 0 10px rgba(244, 215, 122, 0.35);
-            background: #1e1b4b;
+        .entry-sub {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 400;
+            font-size: 12px;
+            letter-spacing: 0.16em;
+            color: var(--ink-muted);
+            text-transform: uppercase;
+        }
+
+        .entry-arrow {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
+            color: var(--gold);
+            opacity: 0.7;
             flex-shrink: 0;
+            line-height: 1;
+            transition: transform 0.25s ease, opacity 0.25s ease, color 0.25s ease;
         }
 
-        /* Арабча матн */
-        .link-btn.lang-ar {
+        .entry:hover .entry-arrow {
+            transform: translateX(5px);
+            opacity: 1;
+            color: var(--gold-bright);
+        }
+
+        .entry:hover .entry-title {
+            color: var(--gold-bright);
+        }
+
+        .entry:focus-visible {
+            outline: 2px solid var(--gold-bright);
+            outline-offset: 6px;
+            border-radius: 2px;
+        }
+
+        /* Arabic entries — RTL */
+        .entry.lang-ar {
             direction: rtl;
         }
-        .link-btn.lang-ar span {
+        .entry.lang-ar .entry-title {
             font-family: 'Scheherazade New', serif;
-            font-size: 19px;
+            font-size: 28px;
+            line-height: 1.3;
+            font-weight: 400;
+        }
+        .entry.lang-ar .entry-sub {
+            font-family: 'Scheherazade New', serif;
+            font-size: 17px;
+            letter-spacing: 0;
+            text-transform: none;
+        }
+        .entry.lang-ar .entry-arrow {
+            transform: scaleX(-1);
+        }
+        .entry.lang-ar:hover .entry-arrow {
+            transform: scaleX(-1) translateX(5px);
         }
 
-        .footer {
+        /* Colophon — footer dua */
+        .colophon {
             text-align: center;
-            margin-top: 28px;
-            opacity: 0.9;
+            margin-top: 80px;
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 16px;
+            color: var(--ink-soft);
+            line-height: 1.5;
         }
 
-        .footer .arabic {
+        .colophon .arabic {
             font-family: 'Scheherazade New', serif;
-            font-size: 20px;
+            font-style: normal;
+            font-size: 24px;
             color: var(--gold-bright);
             display: block;
-            margin-bottom: 4px;
-            text-shadow: 0 0 10px rgba(244, 215, 122, 0.4);
         }
 
-        .footer .lang-uz {
+        .colophon .lang-uz {
             display: block;
-            font-size: 14px;
-            color: var(--gold);
-            font-style: italic;
-            opacity: 0.85;
+            letter-spacing: 0.01em;
         }
 
-        @media (max-width: 480px) {
-            .container {
-                padding: 36px 22px 32px;
+        /* Мобиль */
+        @media (max-width: 600px) {
+            .page {
+                padding: 68px 24px 56px;
+            }
+            .masthead {
+                margin-bottom: 56px;
             }
             .bismillah {
-                font-size: 24px;
+                font-size: 20px;
             }
-            .ornament .line {
-                width: 44px;
+            .bismillah.lang-ar {
+                font-size: 28px;
             }
-        }
-
-        /* ПК браузер учун мослаштириш */
-        @media (min-width: 768px) {
-            .container {
-                max-width: 480px;
-                padding: 50px 45px 46px;
+            .rule {
+                margin: 26px auto 22px;
             }
-
-            :root[data-lang="uz"] .container,
-            :root[data-lang="ar"] .container {
-                max-width: 820px;
+            .name {
+                font-size: 28px;
             }
-
-            .bismillah {
-                font-size: 34px;
+            .role {
+                font-size: 11px;
+                letter-spacing: 0.25em;
             }
-
-            .bismillah.lang-uz {
+            .lang-switcher {
+                margin-bottom: 48px;
+                gap: 14px;
+            }
+            .entry {
+                padding: 22px 2px;
+                gap: 16px;
+            }
+            .entry-title {
                 font-size: 21px;
             }
-
-            .ornament .line {
-                width: 80px;
+            .entry.lang-ar .entry-title {
+                font-size: 26px;
             }
-
-            :root[data-lang="uz"] .links-section,
-            :root[data-lang="ar"] .links-section {
-                display: grid;
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-                gap: 12px;
-            }
-
-            :root[data-lang="uz"] .link-btn,
-            :root[data-lang="ar"] .link-btn {
-                margin-bottom: 0;
-            }
-
-            .footer {
-                margin-top: 36px;
-            }
-
-            .footer .arabic {
-                font-size: 22px;
-            }
-
-            .footer .lang-uz {
-                font-size: 15px;
+            .colophon {
+                margin-top: 60px;
             }
         }
-
-        /* Анимациялар */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes starsTwinkle {
-            0%, 100% { opacity: 0.4; }
-            50% { opacity: 0.95; }
-        }
-
-        @keyframes shootingStar {
-            0%, 100% {
-                transform: translate(0, 0) rotate(28deg);
-                opacity: 0;
-            }
-            3% { opacity: 0; }
-            6% { opacity: 1; }
-            18% {
-                transform: translate(540px, 290px) rotate(28deg);
-                opacity: 0;
-            }
-        }
-
-        .container > * {
-            animation: fadeInUp 0.6s ease backwards;
-        }
-
-        .container > *:nth-child(1) { animation-delay: 0.05s; }
-        .container > *:nth-child(2) { animation-delay: 0.15s; }
-        .container > *:nth-child(3) { animation-delay: 0.25s; }
-        .container > *:nth-child(4) { animation-delay: 0.35s; }
-        .container > *:nth-child(5) { animation-delay: 0.45s; }
-        .container > *:nth-child(6) { animation-delay: 0.55s; }
-        .container > *:nth-child(7) { animation-delay: 0.65s; }
 
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after {
@@ -508,101 +389,125 @@
     </style>
 </head>
 <body>
-    <div class="shooting-star" aria-hidden="true"></div>
+    <main class="page">
+        <header class="masthead">
+            <p class="bismillah lang-uz">Меҳрибон ва раҳмли Аллоҳнинг исми билан</p>
+            <p class="bismillah lang-ar" lang="ar" dir="rtl">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+            <div class="rule" aria-hidden="true"></div>
+            <h1 class="name">Исмоил Дилмурод ўғли</h1>
+            <p class="role">Шахсий саҳифа</p>
+        </header>
 
-    <main class="container">
-        <div class="bismillah lang-uz">Меҳрибон ва раҳмли Аллоҳнинг исми билан</div>
-        <div class="bismillah lang-ar" lang="ar" dir="rtl">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
-
-        <div class="ornament" aria-hidden="true">
-            <span class="line"></span>
-            <span class="star">✦</span>
-            <span class="star mid">✧</span>
-            <span class="star">✦</span>
-            <span class="line"></span>
-        </div>
-
-        <div class="lang-switcher" role="group" aria-label="Тилни танлаш">
+        <nav class="lang-switcher" role="group" aria-label="Тилни танлаш">
             <button type="button" class="lang-btn" data-lang="uz">Ўзбекча</button>
+            <span class="sep" aria-hidden="true">·</span>
             <button type="button" class="lang-btn" data-lang="ar" lang="ar">العربية</button>
+            <span class="sep" aria-hidden="true">·</span>
             <button type="button" class="lang-btn" data-lang="windows" lang="en">Windows</button>
-        </div>
+        </nav>
 
-        <nav class="links-section" aria-label="Асосий ҳаволалар">
-            <a href="https://abuyahyo.github.io/alloh/uz/" class="link-btn lang-uz" rel="noopener">
-                <img class="icon icon-img" src="alloh-uz.svg" alt="" width="52" height="52" loading="lazy" decoding="async">
-                <span>Аллоҳнинг гўзал исмлари</span>
+        <nav class="entries" aria-label="Асосий ҳаволалар">
+            <a href="https://abuyahyo.github.io/alloh/uz/" class="entry lang-uz" rel="noopener">
+                <span class="entry-body">
+                    <span class="entry-title">Аллоҳнинг гўзал исмлари</span>
+                    <span class="entry-sub">99 та исм ва маъноси</span>
+                </span>
+                <span class="entry-arrow" aria-hidden="true">›</span>
             </a>
 
-            <a href="https://abuyahyo.github.io/quron/" class="link-btn lang-uz" rel="noopener">
-                <img class="icon icon-img" src="quron.png" alt="" width="52" height="52" loading="lazy" decoding="async">
-                <span>Қуръони Карим — Ўзбекча таржима</span>
+            <a href="https://abuyahyo.github.io/quron/" class="entry lang-uz" rel="noopener">
+                <span class="entry-body">
+                    <span class="entry-title">Қуръони Карим</span>
+                    <span class="entry-sub">Ўзбекча таржима</span>
+                </span>
+                <span class="entry-arrow" aria-hidden="true">›</span>
             </a>
 
-            <a href="https://abuyahyo.github.io/buxoriy/" class="link-btn lang-uz" rel="noopener">
-                <img class="icon icon-img" src="buxoriy.png" alt="" width="52" height="52" loading="lazy" decoding="async">
-                <span>Имом Бухорий — Саҳиҳ тўплами</span>
+            <a href="https://abuyahyo.github.io/buxoriy/" class="entry lang-uz" rel="noopener">
+                <span class="entry-body">
+                    <span class="entry-title">Имом Бухорий</span>
+                    <span class="entry-sub">Саҳиҳ тўплами</span>
+                </span>
+                <span class="entry-arrow" aria-hidden="true">›</span>
             </a>
 
-            <a href="https://abuyahyo.github.io/qirq-hadis/" class="link-btn lang-uz" rel="noopener">
-                <img class="icon icon-img" src="qirq-hadis.png" alt="" width="52" height="52" loading="lazy" decoding="async">
-                <span>Имом Нававий — Қирқ ҳадис</span>
+            <a href="https://abuyahyo.github.io/qirq-hadis/" class="entry lang-uz" rel="noopener">
+                <span class="entry-body">
+                    <span class="entry-title">Имом Нававий</span>
+                    <span class="entry-sub">Қирқ ҳадис</span>
+                </span>
+                <span class="entry-arrow" aria-hidden="true">›</span>
             </a>
 
-            <a href="https://abuyahyo.github.io/zikr/" class="link-btn lang-uz" rel="noopener">
-                <img class="icon icon-img" src="zikr.png" alt="" width="52" height="52" loading="lazy" decoding="async">
-                <span>Зикр ва дуолар тўплами</span>
+            <a href="https://abuyahyo.github.io/zikr/" class="entry lang-uz" rel="noopener">
+                <span class="entry-body">
+                    <span class="entry-title">Зикр ва дуолар</span>
+                    <span class="entry-sub">Кундалик тўплам</span>
+                </span>
+                <span class="entry-arrow" aria-hidden="true">›</span>
             </a>
 
-            <a href="https://abuyahyo.github.io/haqiqat/" class="link-btn lang-uz" rel="noopener">
-                <img class="icon icon-img" src="haqiqat.png" alt="" width="52" height="52" loading="lazy" decoding="async">
-                <span>Шубҳалар пардаси ортидаги ҳақиқат</span>
+            <a href="https://abuyahyo.github.io/haqiqat/" class="entry lang-uz" rel="noopener">
+                <span class="entry-body">
+                    <span class="entry-title">Шубҳалар пардаси ортидаги ҳақиқат</span>
+                </span>
+                <span class="entry-arrow" aria-hidden="true">›</span>
             </a>
 
-            <a href="https://abuyahyo.github.io/otamga/" class="link-btn lang-uz" rel="noopener">
-                <img class="icon icon-img" src="otamga.png" alt="" width="52" height="52" loading="lazy" decoding="async">
-                <span>Отамга — Қуръон тиловати учун ёрдамчи</span>
+            <a href="https://abuyahyo.github.io/otamga/" class="entry lang-uz" rel="noopener">
+                <span class="entry-body">
+                    <span class="entry-title">Отамга</span>
+                    <span class="entry-sub">Қуръон тиловати учун ёрдамчи</span>
+                </span>
+                <span class="entry-arrow" aria-hidden="true">›</span>
             </a>
 
-            <a href="https://abuyahyo.github.io/muhim/" class="link-btn lang-uz" rel="noopener">
-                <img class="icon icon-img" src="muhim.png" alt="" width="52" height="52" loading="lazy" decoding="async">
-                <span>Муҳим — Мусулмон учун муҳим кунлар</span>
+            <a href="https://abuyahyo.github.io/muhim/" class="entry lang-uz" rel="noopener">
+                <span class="entry-body">
+                    <span class="entry-title">Муҳим</span>
+                    <span class="entry-sub">Мусулмон учун муҳим кунлар</span>
+                </span>
+                <span class="entry-arrow" aria-hidden="true">›</span>
             </a>
 
-            <a href="https://abuyahyo.github.io/ovqat/" class="link-btn lang-uz" rel="noopener">
-                <img class="icon icon-img" src="ovqat.png" alt="" width="52" height="52" loading="lazy" decoding="async">
-                <span>Овқат — Таомлар рўйхати</span>
+            <a href="https://abuyahyo.github.io/ovqat/" class="entry lang-uz" rel="noopener">
+                <span class="entry-body">
+                    <span class="entry-title">Овқат</span>
+                    <span class="entry-sub">Таомлар рўйхати</span>
+                </span>
+                <span class="entry-arrow" aria-hidden="true">›</span>
             </a>
 
-            <a href="https://abuyahyo.github.io/alloh/" class="link-btn lang-ar" rel="noopener" lang="ar" dir="rtl">
-                <img class="icon icon-img" src="alloh.png" alt="" width="52" height="52" loading="lazy" decoding="async">
-                <span>أسماء الله الحسنى</span>
+            <a href="https://abuyahyo.github.io/alloh/" class="entry lang-ar" rel="noopener" lang="ar" dir="rtl">
+                <span class="entry-body">
+                    <span class="entry-title">أسماء الله الحسنى</span>
+                </span>
+                <span class="entry-arrow" aria-hidden="true">›</span>
             </a>
 
-            <a href="https://abuyahyo.github.io/basoir/" class="link-btn lang-ar" rel="noopener" lang="ar" dir="rtl">
-                <img class="icon icon-img" src="basoir.png" alt="" width="52" height="52" loading="lazy" decoding="async">
-                <span>بصائر — أكبر مشروع فكري في نقد الإلحاد وبيان بعض أدلة صحة الإسلام</span>
+            <a href="https://abuyahyo.github.io/basoir/" class="entry lang-ar" rel="noopener" lang="ar" dir="rtl">
+                <span class="entry-body">
+                    <span class="entry-title">بصائر</span>
+                    <span class="entry-sub">أكبر مشروع فكري في نقد الإلحاد</span>
+                </span>
+                <span class="entry-arrow" aria-hidden="true">›</span>
             </a>
 
-            <a href="https://github.com/abuyahyo/namoz" class="link-btn lang-windows" rel="noopener">
-                <img class="icon icon-img" src="namoz.png" alt="" width="52" height="52" loading="lazy" decoding="async">
-                <span>Намоз — Windows десктоп намоз вақтлари виджети</span>
+            <a href="https://github.com/abuyahyo/namoz" class="entry lang-windows" rel="noopener">
+                <span class="entry-body">
+                    <span class="entry-title">Намоз</span>
+                    <span class="entry-sub">Windows десктоп виджети</span>
+                </span>
+                <span class="entry-arrow" aria-hidden="true">›</span>
             </a>
         </nav>
 
-        <div class="ornament" aria-hidden="true">
-            <span class="line"></span>
-            <span class="star">✦</span>
-            <span class="star mid">✧</span>
-            <span class="star">✦</span>
-            <span class="line"></span>
-        </div>
-
-        <footer class="footer">
-            <span class="lang-uz">Аллоҳ бизни муваффақ қилсин</span>
-            <span class="arabic lang-ar" lang="ar" dir="rtl">وَفِّقْنَا اللَّهُ</span>
+        <footer class="colophon">
+            <p class="lang-uz">Аллоҳ бизни муваффақ қилсин</p>
+            <p class="arabic lang-ar" lang="ar" dir="rtl">وَفِّقْنَا اللَّهُ</p>
         </footer>
     </main>
+
     <script>
         (function () {
             var KEY = 'havola-lang';
