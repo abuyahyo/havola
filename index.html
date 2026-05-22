@@ -7,7 +7,7 @@
 
     <meta name="description" content="Исмоил Дилмурод ўғлининг шахсий саҳифаси. Қуръони Карим ўзбекча таржимаси, Имом Бухорий саҳиҳ тўплами, Имом Нававий қирқ ҳадиси, зикр ва дуолар тўплами.">
     <meta name="author" content="Исмоил Дилмурод ўғли">
-    <meta name="theme-color" content="#0a1024">
+    <meta name="theme-color" content="#050816">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -29,6 +29,7 @@
 
     <link rel="icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="preload" as="image" href="avatar.jpeg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,8 +51,7 @@
             --ink-muted: #837d6a;
             --gold: #caa647;
             --gold-bright: #e9c97a;
-            --hairline: rgba(202, 166, 71, 0.18);
-            --hairline-soft: rgba(202, 166, 71, 0.1);
+            --hairline: rgba(202, 166, 71, 0.2);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -64,89 +64,96 @@
             font-size: 16px;
             line-height: 1.5;
             color: var(--ink);
-            background:
-                radial-gradient(ellipse 90% 60% at 50% -5%, rgba(28, 38, 78, 0.55) 0%, transparent 60%),
-                linear-gradient(180deg, var(--bg-grad-top) 0%, var(--bg) 100%);
-            background-attachment: fixed;
+            background: var(--bg);
             min-height: 100vh;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            padding:
-                env(safe-area-inset-top, 0px)
-                env(safe-area-inset-right, 0px)
-                env(safe-area-inset-bottom, 0px)
-                env(safe-area-inset-left, 0px);
             position: relative;
             overflow-x: hidden;
         }
 
-        /* Жуда нозик юлдузли осмон */
-        body::before {
+        /* Hero — Масжид ан-Набавий */
+        .hero {
+            position: relative;
+            width: 100%;
+            min-height: 66vh;
+            background-image: url('avatar.jpeg');
+            background-size: cover;
+            background-position: center 35%;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding:
+                calc(env(safe-area-inset-top, 0px) + 80px)
+                28px
+                120px;
+            isolation: isolate;
+        }
+
+        /* Cinematic vignette + smooth fade to body */
+        .hero::before {
             content: '';
-            position: fixed;
+            position: absolute;
             inset: 0;
-            background-image:
-                radial-gradient(0.5px 0.5px at 12% 18%, rgba(255,255,255,0.55), transparent 60%),
-                radial-gradient(0.8px 0.8px at 38% 42%, rgba(244,215,122,0.4), transparent 60%),
-                radial-gradient(0.5px 0.5px at 62% 24%, rgba(255,255,255,0.5), transparent 60%),
-                radial-gradient(0.7px 0.7px at 78% 68%, rgba(255,255,255,0.45), transparent 60%),
-                radial-gradient(0.9px 0.9px at 88% 14%, rgba(244,215,122,0.45), transparent 60%),
-                radial-gradient(0.5px 0.5px at 22% 78%, rgba(255,255,255,0.45), transparent 60%),
-                radial-gradient(0.6px 0.6px at 52% 88%, rgba(255,255,255,0.4), transparent 60%),
-                radial-gradient(0.5px 0.5px at 8% 55%, rgba(244,215,122,0.35), transparent 60%),
-                radial-gradient(0.6px 0.6px at 92% 48%, rgba(255,255,255,0.4), transparent 60%);
-            z-index: 0;
+            background:
+                radial-gradient(ellipse 120% 100% at 50% 50%,
+                    rgba(5, 8, 22, 0.15) 0%,
+                    rgba(5, 8, 22, 0.55) 60%,
+                    rgba(5, 8, 22, 0.85) 90%),
+                linear-gradient(180deg,
+                    rgba(5, 8, 22, 0.45) 0%,
+                    rgba(5, 8, 22, 0.35) 30%,
+                    rgba(5, 8, 22, 0.7) 70%,
+                    var(--bg) 100%);
+            z-index: -1;
             pointer-events: none;
         }
 
-        .page {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 96px 28px 80px;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Masthead */
-        .masthead {
+        .hero-content {
             text-align: center;
-            margin-bottom: 80px;
+            max-width: 600px;
+            width: 100%;
         }
 
         .bismillah {
             font-family: 'Cormorant Garamond', serif;
             font-style: italic;
             font-weight: 400;
-            font-size: 23px;
-            line-height: 1.35;
+            font-size: 22px;
+            line-height: 1.4;
             color: var(--ink);
             letter-spacing: 0.005em;
+            text-shadow: 0 1px 16px rgba(0, 0, 0, 0.6);
         }
 
         .bismillah.lang-ar {
             font-family: 'Scheherazade New', serif;
             font-style: normal;
             font-weight: 700;
-            font-size: 32px;
+            font-size: 36px;
             color: var(--gold-bright);
             letter-spacing: 0;
+            text-shadow: 0 2px 24px rgba(0, 0, 0, 0.75);
         }
 
-        .rule {
+        .hero .rule {
             width: 44px;
             height: 1px;
             background: var(--gold);
             margin: 32px auto 28px;
-            opacity: 0.75;
+            opacity: 0.85;
+            box-shadow: 0 0 12px rgba(202, 166, 71, 0.5);
         }
 
         .name {
             font-family: 'Cormorant Garamond', serif;
             font-weight: 500;
-            font-size: 32px;
+            font-size: 34px;
             line-height: 1.15;
             color: var(--ink);
             letter-spacing: 0.005em;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.65);
         }
 
         .role {
@@ -154,18 +161,27 @@
             font-weight: 500;
             font-size: 12px;
             text-transform: uppercase;
-            letter-spacing: 0.28em;
-            color: var(--ink-muted);
-            margin-top: 14px;
+            letter-spacing: 0.32em;
+            color: var(--ink-soft);
+            margin-top: 16px;
+            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
         }
 
-        /* Lang switcher: text-only */
+        /* Main body */
+        .page {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 8px 28px 80px;
+            position: relative;
+        }
+
+        /* Lang switcher */
         .lang-switcher {
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 16px;
-            margin-bottom: 64px;
+            margin: 0 0 48px;
         }
 
         .lang-btn {
@@ -217,7 +233,7 @@
             display: none;
         }
 
-        /* Entries — hairline list */
+        /* Entries — hairline list with icons */
         .entries {
             display: block;
         }
@@ -225,9 +241,8 @@
         .entry {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-            padding: 26px 4px;
+            gap: 18px;
+            padding: 22px 4px;
             border-top: 1px solid var(--hairline);
             color: var(--ink);
             text-decoration: none;
@@ -239,17 +254,29 @@
             border-bottom: 1px solid var(--hairline);
         }
 
+        .entry-icon {
+            width: 44px;
+            height: 44px;
+            flex-shrink: 0;
+            border-radius: 10px;
+            object-fit: cover;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--hairline);
+            transition: transform 0.25s ease, border-color 0.25s ease;
+        }
+
         .entry-body {
             display: flex;
             flex-direction: column;
-            gap: 6px;
+            gap: 5px;
             min-width: 0;
+            flex: 1;
         }
 
         .entry-title {
             font-family: 'Cormorant Garamond', serif;
             font-weight: 500;
-            font-size: 24px;
+            font-size: 22px;
             line-height: 1.2;
             color: var(--ink);
             letter-spacing: 0.005em;
@@ -258,15 +285,15 @@
         .entry-sub {
             font-family: 'Nunito', sans-serif;
             font-weight: 400;
-            font-size: 12px;
-            letter-spacing: 0.16em;
+            font-size: 11px;
+            letter-spacing: 0.18em;
             color: var(--ink-muted);
             text-transform: uppercase;
         }
 
         .entry-arrow {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 26px;
+            font-size: 24px;
             color: var(--gold);
             opacity: 0.7;
             flex-shrink: 0;
@@ -284,6 +311,10 @@
             color: var(--gold-bright);
         }
 
+        .entry:hover .entry-icon {
+            border-color: rgba(233, 201, 122, 0.45);
+        }
+
         .entry:focus-visible {
             outline: 2px solid var(--gold-bright);
             outline-offset: 6px;
@@ -296,13 +327,13 @@
         }
         .entry.lang-ar .entry-title {
             font-family: 'Scheherazade New', serif;
-            font-size: 28px;
+            font-size: 26px;
             line-height: 1.3;
             font-weight: 400;
         }
         .entry.lang-ar .entry-sub {
             font-family: 'Scheherazade New', serif;
-            font-size: 17px;
+            font-size: 16px;
             letter-spacing: 0;
             text-transform: none;
         }
@@ -313,10 +344,10 @@
             transform: scaleX(-1) translateX(5px);
         }
 
-        /* Colophon — footer dua */
+        /* Colophon */
         .colophon {
             text-align: center;
-            margin-top: 80px;
+            margin-top: 72px;
             font-family: 'Cormorant Garamond', serif;
             font-style: italic;
             font-size: 16px;
@@ -339,44 +370,52 @@
 
         /* Мобиль */
         @media (max-width: 600px) {
-            .page {
-                padding: 68px 24px 56px;
-            }
-            .masthead {
-                margin-bottom: 56px;
+            .hero {
+                min-height: 60vh;
+                padding:
+                    calc(env(safe-area-inset-top, 0px) + 60px)
+                    22px
+                    96px;
             }
             .bismillah {
-                font-size: 20px;
+                font-size: 19px;
             }
             .bismillah.lang-ar {
-                font-size: 28px;
+                font-size: 30px;
             }
-            .rule {
-                margin: 26px auto 22px;
+            .hero .rule {
+                margin: 26px auto 24px;
             }
             .name {
                 font-size: 28px;
             }
             .role {
                 font-size: 11px;
-                letter-spacing: 0.25em;
+                letter-spacing: 0.28em;
+            }
+            .page {
+                padding: 8px 22px 56px;
             }
             .lang-switcher {
-                margin-bottom: 48px;
+                margin-bottom: 40px;
                 gap: 14px;
             }
             .entry {
-                padding: 22px 2px;
-                gap: 16px;
+                padding: 20px 2px;
+                gap: 14px;
+            }
+            .entry-icon {
+                width: 40px;
+                height: 40px;
             }
             .entry-title {
-                font-size: 21px;
+                font-size: 20px;
             }
             .entry.lang-ar .entry-title {
-                font-size: 26px;
+                font-size: 24px;
             }
             .colophon {
-                margin-top: 60px;
+                margin-top: 56px;
             }
         }
 
@@ -389,15 +428,17 @@
     </style>
 </head>
 <body>
-    <main class="page">
-        <header class="masthead">
+    <header class="hero" role="banner">
+        <div class="hero-content">
             <p class="bismillah lang-uz">Меҳрибон ва раҳмли Аллоҳнинг исми билан</p>
             <p class="bismillah lang-ar" lang="ar" dir="rtl">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
             <div class="rule" aria-hidden="true"></div>
             <h1 class="name">Исмоил Дилмурод ўғли</h1>
             <p class="role">Шахсий саҳифа</p>
-        </header>
+        </div>
+    </header>
 
+    <main class="page">
         <nav class="lang-switcher" role="group" aria-label="Тилни танлаш">
             <button type="button" class="lang-btn" data-lang="uz">Ўзбекча</button>
             <span class="sep" aria-hidden="true">·</span>
@@ -408,6 +449,7 @@
 
         <nav class="entries" aria-label="Асосий ҳаволалар">
             <a href="https://abuyahyo.github.io/alloh/uz/" class="entry lang-uz" rel="noopener">
+                <img class="entry-icon" src="alloh-uz.svg" alt="" width="44" height="44" loading="lazy" decoding="async">
                 <span class="entry-body">
                     <span class="entry-title">Аллоҳнинг гўзал исмлари</span>
                     <span class="entry-sub">99 та исм ва маъноси</span>
@@ -416,6 +458,7 @@
             </a>
 
             <a href="https://abuyahyo.github.io/quron/" class="entry lang-uz" rel="noopener">
+                <img class="entry-icon" src="quron.png" alt="" width="44" height="44" loading="lazy" decoding="async">
                 <span class="entry-body">
                     <span class="entry-title">Қуръони Карим</span>
                     <span class="entry-sub">Ўзбекча таржима</span>
@@ -424,6 +467,7 @@
             </a>
 
             <a href="https://abuyahyo.github.io/buxoriy/" class="entry lang-uz" rel="noopener">
+                <img class="entry-icon" src="buxoriy.png" alt="" width="44" height="44" loading="lazy" decoding="async">
                 <span class="entry-body">
                     <span class="entry-title">Имом Бухорий</span>
                     <span class="entry-sub">Саҳиҳ тўплами</span>
@@ -432,6 +476,7 @@
             </a>
 
             <a href="https://abuyahyo.github.io/qirq-hadis/" class="entry lang-uz" rel="noopener">
+                <img class="entry-icon" src="qirq-hadis.png" alt="" width="44" height="44" loading="lazy" decoding="async">
                 <span class="entry-body">
                     <span class="entry-title">Имом Нававий</span>
                     <span class="entry-sub">Қирқ ҳадис</span>
@@ -440,6 +485,7 @@
             </a>
 
             <a href="https://abuyahyo.github.io/zikr/" class="entry lang-uz" rel="noopener">
+                <img class="entry-icon" src="zikr.png" alt="" width="44" height="44" loading="lazy" decoding="async">
                 <span class="entry-body">
                     <span class="entry-title">Зикр ва дуолар</span>
                     <span class="entry-sub">Кундалик тўплам</span>
@@ -448,6 +494,7 @@
             </a>
 
             <a href="https://abuyahyo.github.io/haqiqat/" class="entry lang-uz" rel="noopener">
+                <img class="entry-icon" src="haqiqat.png" alt="" width="44" height="44" loading="lazy" decoding="async">
                 <span class="entry-body">
                     <span class="entry-title">Шубҳалар пардаси ортидаги ҳақиқат</span>
                 </span>
@@ -455,6 +502,7 @@
             </a>
 
             <a href="https://abuyahyo.github.io/otamga/" class="entry lang-uz" rel="noopener">
+                <img class="entry-icon" src="otamga.png" alt="" width="44" height="44" loading="lazy" decoding="async">
                 <span class="entry-body">
                     <span class="entry-title">Отамга</span>
                     <span class="entry-sub">Қуръон тиловати учун ёрдамчи</span>
@@ -463,6 +511,7 @@
             </a>
 
             <a href="https://abuyahyo.github.io/muhim/" class="entry lang-uz" rel="noopener">
+                <img class="entry-icon" src="muhim.png" alt="" width="44" height="44" loading="lazy" decoding="async">
                 <span class="entry-body">
                     <span class="entry-title">Муҳим</span>
                     <span class="entry-sub">Мусулмон учун муҳим кунлар</span>
@@ -471,6 +520,7 @@
             </a>
 
             <a href="https://abuyahyo.github.io/ovqat/" class="entry lang-uz" rel="noopener">
+                <img class="entry-icon" src="ovqat.png" alt="" width="44" height="44" loading="lazy" decoding="async">
                 <span class="entry-body">
                     <span class="entry-title">Овқат</span>
                     <span class="entry-sub">Таомлар рўйхати</span>
@@ -479,6 +529,7 @@
             </a>
 
             <a href="https://abuyahyo.github.io/alloh/" class="entry lang-ar" rel="noopener" lang="ar" dir="rtl">
+                <img class="entry-icon" src="alloh.png" alt="" width="44" height="44" loading="lazy" decoding="async">
                 <span class="entry-body">
                     <span class="entry-title">أسماء الله الحسنى</span>
                 </span>
@@ -486,6 +537,7 @@
             </a>
 
             <a href="https://abuyahyo.github.io/basoir/" class="entry lang-ar" rel="noopener" lang="ar" dir="rtl">
+                <img class="entry-icon" src="basoir.png" alt="" width="44" height="44" loading="lazy" decoding="async">
                 <span class="entry-body">
                     <span class="entry-title">بصائر</span>
                     <span class="entry-sub">أكبر مشروع فكري في نقد الإلحاد</span>
@@ -494,6 +546,7 @@
             </a>
 
             <a href="https://github.com/abuyahyo/namoz" class="entry lang-windows" rel="noopener">
+                <img class="entry-icon" src="namoz.png" alt="" width="44" height="44" loading="lazy" decoding="async">
                 <span class="entry-body">
                     <span class="entry-title">Намоз</span>
                     <span class="entry-sub">Windows десктоп виджети</span>
