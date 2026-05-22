@@ -20,37 +20,47 @@ site (`index.html`) deployed via GitHub Pages.
 
 ## Design
 
-Editorial minimalism — typography and hairlines do the work. No cards,
-no glass, no icons.
+Cinematic hero + editorial list. The page opens with a full-bleed
+photo of Masjid an-Nabawi (`avatar.jpeg`) carrying the bismillah,
+name and role caption; below it sits a vertical list of typographic
+entries separated by hairlines, each with a small icon thumbnail.
 
-- **Background**: deep midnight gradient (`#0a1024 → #050816`) with one
-  soft radial nebula at the top. Very faint static starfield, no
-  shooting star, no animation. `theme-color` meta is `#0a1024`.
+- **Background**: solid deep midnight `#050816` below the hero. The
+  hero itself is `avatar.jpeg` covered by a radial-vignette + linear
+  fade so its bottom edge blends into the body. `theme-color` meta is
+  `#050816`.
 - **Palette**:
   - `--ink` `#ece4cc` — primary text (warm cream)
   - `--ink-soft` `#b8b09a` — secondary text
   - `--ink-muted` `#837d6a` — captions, uppercase labels
-  - `--gold` `#caa647` — hairlines, chevrons, lang-pill underline
+  - `--gold` `#caa647` — hairlines, chevrons, lang-pill underline,
+    hero rule
   - `--gold-bright` `#e9c97a` — bismillah, hover highlight, active pill
-  - `--hairline` `rgba(202, 166, 71, 0.18)` — list dividers
+  - `--hairline` `rgba(202, 166, 71, 0.2)` — list dividers and icon
+    borders
 - **Fonts**: Cormorant Garamond (display serif, Cyrillic-ext covers
   Uzbek), Nunito (sans, captions, lang switcher), Scheherazade New
-  (Arabic). All loaded from Google Fonts with `display=swap`.
+  (Arabic). All from Google Fonts with `display=swap`.
 - **Structure** (top to bottom):
-  1. Masthead — bismillah → 44×1px gold rule → name (`<h1>`) → role
+  1. Hero `<header class="hero">` — full-bleed `avatar.jpeg`, min-height
+     ~66vh desktop / 60vh mobile. Contents centred: bismillah → 44×1px
+     gold rule (with a soft glow) → `<h1>` name → uppercase role caption.
+     All overlay text gets a soft text-shadow for legibility on photo.
   2. Lang switcher — three text buttons separated by `·`, active gets
      a gold underline
   3. Entries — vertical list of `<a class="entry">` rows separated by
-     gold hairlines (1px). Each row: serif title + optional uppercase
-     sans subtitle + gold `›` chevron
+     gold hairlines (1px). Each row: 44×44 icon thumbnail (40×40 mobile),
+     serif title + optional uppercase sans subtitle, gold `›` chevron
   4. Colophon — small italic dua, centred
 - **Hover**: only on `.entry` rows. Title becomes `--gold-bright`,
-  chevron nudges 5px and brightens. Disabled by `prefers-reduced-motion`.
+  chevron nudges 5px and brightens, icon border picks up a faint gold
+  glow. Disabled by `prefers-reduced-motion`.
 
 ## Entry pattern
 
 ```html
 <a href="…" class="entry lang-uz" rel="noopener">
+  <img class="entry-icon" src="quron.png" alt="" width="44" height="44" loading="lazy" decoding="async">
   <span class="entry-body">
     <span class="entry-title">Қуръони Карим</span>
     <span class="entry-sub">Ўзбекча таржима</span>
@@ -62,6 +72,9 @@ no glass, no icons.
 - `entry-sub` is optional (some titles stand alone).
 - For the title/subhead split use the two spans, not an em-dash inside
   a single field.
+- Icons are the existing PNG/SVG files at the repo root, ~44×44 with a
+  hairline border (10px radius). `alt=""` because the title carries the
+  meaning.
 - Arabic entries get `lang="ar" dir="rtl"` on the `<a>`. The chevron
   stays `›` in HTML and is flipped via `transform: scaleX(-1)`.
 
