@@ -38,7 +38,7 @@
     <script>
         try {
             var l = localStorage.getItem('havola-lang');
-            if (l === 'ar' || l === 'windows' || l === 'en') document.documentElement.setAttribute('data-lang', l);
+            if (l === 'ar' || l === 'windows') document.documentElement.setAttribute('data-lang', l);
         } catch (e) {}
     </script>
 
@@ -245,10 +245,9 @@
         }
 
         /* Бўлим алмаштириш — кўриниш / яшириш */
-        :root[data-lang="uz"] :is(.lang-ar, .lang-windows, .lang-en),
-        :root[data-lang="ar"] :is(.lang-uz, .lang-windows, .lang-en),
-        :root[data-lang="windows"] :is(.lang-uz, .lang-ar, .lang-en),
-        :root[data-lang="en"] :is(.lang-uz, .lang-ar, .lang-windows) {
+        :root[data-lang="uz"] :is(.lang-ar, .lang-windows),
+        :root[data-lang="ar"] :is(.lang-uz, .lang-windows),
+        :root[data-lang="windows"] :is(.lang-uz, .lang-ar) {
             display: none;
         }
 
@@ -469,8 +468,6 @@
             <button type="button" class="lang-btn" data-lang="ar" lang="ar">العربية</button>
             <span class="sep" aria-hidden="true">·</span>
             <button type="button" class="lang-btn" data-lang="windows" lang="en">Windows</button>
-            <span class="sep" aria-hidden="true">·</span>
-            <button type="button" class="lang-btn" data-lang="en" lang="en">English</button>
         </nav>
 
         <nav class="entries" aria-label="Асосий ҳаволалар">
@@ -577,14 +574,6 @@
                 </span>
                 <span class="entry-arrow" aria-hidden="true">›</span>
             </a>
-
-            <a href="https://abuyahyo.github.io/islam/" class="entry lang-en" rel="noopener" lang="en">
-                <img class="entry-icon" src="islam.png" alt="" width="44" height="44" loading="lazy" decoding="async">
-                <span class="entry-body">
-                    <span class="entry-title">Islam Between East and West</span>
-                </span>
-                <span class="entry-arrow" aria-hidden="true">›</span>
-            </a>
         </nav>
 
         <p class="section-label lang-uz">Instagram</p>
@@ -669,7 +658,7 @@
                 try { localStorage.setItem(KEY, lang); } catch (e) {}
             }
 
-            var allowed = ['uz', 'ar', 'windows', 'en'];
+            var allowed = ['uz', 'ar', 'windows'];
             var saved;
             try { saved = localStorage.getItem(KEY); } catch (e) {}
             apply(allowed.indexOf(saved) >= 0 ? saved : 'uz');
